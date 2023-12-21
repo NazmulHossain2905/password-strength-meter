@@ -1,0 +1,12 @@
+=>  White space are not recommended. 
+    Please avoid white spaces.
+
+=>  Remove white spaces suggestion button
+
+=>  Add more information
+    -> Total uppercase & length
+    -> Total Lowercase & length
+    -> Total Number & length
+    -> Total Symbol & length
+
+=>  Add My name • year • GitHub and copyright

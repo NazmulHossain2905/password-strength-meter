@@ -4,6 +4,7 @@ import {
   checkLowerCase,
   checkNumber,
   checkSymbol,
+  checkWhiteSpace,
 } from "./utils.js";
 
 hideAndShowPassword.addEventListener("click", function () {
@@ -24,11 +25,20 @@ hideAndShowPassword.addEventListener("click", function () {
 });
 
 input.addEventListener("input", function (e) {
-  const inputValue = this.value;
+  const inputValue = this.value.trim();
 
-  //   console.log({ inputValue });
+  //   const removeSpace = inputValue.split(" ").join("");
+  //   console.log(removeSpace);
 
-  //   console.log(checkUpperCase(inputValue));
+  const upperCase = checkUpperCase(inputValue);
+  const lowerCase = checkLowerCase(inputValue);
+  const number = checkNumber(inputValue);
+  const symbol = checkSymbol(inputValue);
+  const whiteSpace = checkWhiteSpace(inputValue);
 
-  console.log(checkSymbol(inputValue));
+  console.log(upperCase);
+  console.log(lowerCase);
+  console.log(number);
+  console.log(symbol);
+  console.log(whiteSpace);
 });
