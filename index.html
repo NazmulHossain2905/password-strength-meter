@@ -4,17 +4,94 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Password Strength Meter</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
   <body>
-    <h1>Password Strength Meter</h1>
+    <h1 class="heading">Password Strength Meter</h1>
+    <main class="main">
+      <div class="main__left">
+        <img
+          class="left__image"
+          src="./assets/images/security.png"
+          alt="Security"
+        />
+      </div>
+      <div class="main__right">
+        <div class="right__password-wrapper">
+          <div class="right__password-label-wrapper">
+            <label class="right__password-label" for="password"
+              >Type Your Password</label
+            >
+            <div class="right__password-hide-show-wrapper">
+              <i class="eye fa fa-eye-slash"></i>
+              <span class="right__password-type">Show</span>
+            </div>
+          </div>
+          <input
+            class="right__password-input"
+            placeholder="Write your password"
+            type="password"
+            name="password"
+            id="password"
+            maxlength="64"
+          />
+        </div>
 
-    <!-- Space
+        <div class="password__strength-steps-wrapper">
+          <div class="password__strength-step password__strength-step--1"></div>
+          <div class="password__strength-step password__strength-step--2"></div>
+          <div class="password__strength-step password__strength-step--3"></div>
+          <div class="password__strength-step password__strength-step--4"></div>
+        </div>
 
+        <div class="password__hint-wrapper">
+          😟 Week, Must contain at least 8 characters
+        </div>
 
-    
-    
-    -->
+        <div class="right__password-requirements-container">
+          <p class="right__password-requirements-title">Password must:</p>
+
+          <p class="password__requirement password__requirement--one">
+            Be between 8 and 64 characters
+          </p>
+
+          <p class="password__requirement password__requirement--two">
+            Include at least three of the following:
+          </p>
+
+          <ul class="password__requirements-lists">
+            <li
+              class="password__requirement-item password__requirement-item-uppercase"
+            >
+              An uppercase character
+            </li>
+            <li
+              class="password__requirement-item password__requirement-item-lowercase"
+            >
+              An lowercase character
+            </li>
+            <li
+              class="password__requirement-item password__requirement-item-number"
+            >
+              An number
+            </li>
+            <li
+              class="password__requirement-item password__requirement-item-special"
+            >
+              An special character
+            </li>
+          </ul>
+        </div>
+      </div>
+    </main>
+
     <!-- JavaScript -->
     <script src="./assets/js/script.js" type="module"></script>
   </body>
