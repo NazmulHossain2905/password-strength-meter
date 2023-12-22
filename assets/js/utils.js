@@ -22,8 +22,8 @@ const checkSymbol = (text = "") => {
 
 const hintMessages = {
   length: "😟 Week, Must contain at least 8 characters",
-  letters: "🙂 So-so. Must contain at least 1 letter",
-  number: "🥱 Good. Please contain at least 1 number",
+  letters: "🙂 So-so. Must contain at least one letter",
+  number: "🥱 Good. Please contain at least one number",
   symbol: "😃 Almost. Must contain special symbol",
   perfect: "😎 Awesome! You have a secure password",
 };
