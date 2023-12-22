@@ -42,12 +42,28 @@
           <input
             class="right__password-input"
             placeholder="Write your password"
-            type="password"
+            type="text"
             name="password"
             id="password"
             maxlength="64"
             value="iyLb9qW2-J3XdbA"
           />
+
+          <!-- Space Alert -->
+          <div class="right__password-space-alert-modal">
+            <div class="right__password-suggestion-wrapper">
+              <p class="right__password-suggestion-title">Suggestion:</p>
+              <button class="right__password-modal-close-button">Close</button>
+            </div>
+            <p class="right__password-suggestion-text">
+              Space are not recommended.
+            </p>
+            <p class="right__password-suggestion-text">Please avoid spaces.</p>
+
+            <button class="right__password-space-remove-button">
+              Remove Space
+            </button>
+          </div>
         </div>
 
         <div class="password__strength-steps-wrapper">

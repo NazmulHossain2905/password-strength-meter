@@ -17,6 +17,7 @@
   --warning-color: #fde54a;
   --info-color: #1497d5;
   --success-color: #38d565;
+  --white-shade: #ddd;
 }
 
 body {
@@ -73,6 +74,10 @@ body {
   gap: 1rem;
 }
 
+.right__password-wrapper {
+  position: relative;
+}
+
 .right__password-label-wrapper {
   display: flex;
   justify-content: space-between;
@@ -118,21 +123,7 @@ body {
   flex: 1;
   height: 0.5rem;
   border-radius: 5px;
-}
-.password__strength-step--1 {
-  background-color: var(--error-color);
-}
-.password__strength-step--2 {
-  background-color: var(--warning-color);
-  /* display: none; */
-}
-.password__strength-step--3 {
-  background-color: var(--info-color);
-  /* display: none; */
-}
-.password__strength-step--4 {
-  background-color: var(--success-color);
-  /* display: none; */
+  background-color: var(--white-shade);
 }
 
 .password__hint-wrapper {
@@ -188,7 +179,7 @@ body {
   gap: 0.3rem;
 }
 
-/*  */
+/* Font Colors */
 
 .success {
   color: var(--success-color);
@@ -201,4 +192,90 @@ body {
 }
 .error {
   color: var(--error-color);
+}
+
+/* Space Alert Modal Style */
+.right__password-space-alert-modal {
+  background-color: #111;
+  max-width: 22rem;
+  padding: 0.5rem 0.8rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 1rem #8888;
+  position: absolute;
+  z-index: 2;
+  top: 105%;
+  left: 50%;
+  color: #fff;
+  animation: fadeIn 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+  display: none;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.right__password-space-alert-modal::before {
+  content: "";
+  position: absolute;
+  width: 1.1rem;
+  aspect-ratio: 1;
+  background-color: inherit;
+  top: -0.5rem;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  border-radius: 2px;
+}
+
+.right__password-suggestion-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.right__password-suggestion-title {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--info-color);
+}
+
+.right__password-modal-close-button,
+.right__password-space-remove-button {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  font-size: 0.9rem;
+  font-family: inherit;
+  color: var(--hint-color);
+  transition: 0.2s ease;
+  cursor: pointer;
+}
+
+.right__password-modal-close-button:hover {
+  color: var(--error-color);
+}
+
+.right__password-suggestion-text {
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: #bbb;
+  /* color: var(--hint-color); */
+}
+
+.right__password-space-remove-button {
+  margin-top: 0.2rem;
+  font-size: 0.8rem;
+  text-decoration: underline;
+  color: var(--warning-color);
+}
+
+.right__password-space-remove-button:hover {
+  color: var(--info-color);
 }
