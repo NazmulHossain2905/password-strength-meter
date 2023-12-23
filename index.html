@@ -21,6 +21,7 @@
   </head>
   <body>
     <main class="main">
+      <!------------------- LEFT SECTION STARTS --------------------->
       <div class="main__left">
         <h1 class="heading">Password Strength Meter</h1>
         <div class="left__image-wrapper">
@@ -31,7 +32,11 @@
           />
         </div>
       </div>
+      <!------------------- LEFT SECTION ENDS --------------------->
+
+      <!------------------- RIGHT SECTION STARTS --------------------->
       <div class="main__right">
+        <!------------------- PASSWORD INPUT AREA STARTS --------------------->
         <div class="right__password-wrapper">
           <div class="right__password-label-wrapper">
             <label class="right__password-label" for="password"
@@ -51,7 +56,7 @@
             maxlength="64"
           />
 
-          <!-- Space Alert -->
+          <!------------------- SPACE ALERT STARTS --------------------->
           <div class="right__password-space-alert-modal">
             <div class="right__password-suggestion-wrapper">
               <p class="right__password-suggestion-title">Suggestion:</p>
@@ -66,8 +71,11 @@
               Remove Space
             </button>
           </div>
+          <!------------------- SPACE ALERT ENDS --------------------->
         </div>
+        <!------------------- PASSWORD INPUT AREA ENDS --------------------->
 
+        <!------------------- PASSWORD STRENGTH STEPS STARTS --------------------->
         <div class="password__strength-steps-wrapper">
           <div
             title="Week"
@@ -86,9 +94,13 @@
             class="password__strength-step password__strength-step--4"
           ></div>
         </div>
+        <!------------------- PASSWORD STRENGTH STEPS ENDS --------------------->
 
+        <!------------------- PASSWORD HINT STARTS --------------------->
         <div class="password__hint-wrapper"></div>
+        <!------------------- PASSWORD HINT STARTS --------------------->
 
+        <!------------------- PASSWORD REQUIREMENTS STARTS --------------------->
         <div class="right__password-requirements-container">
           <h3 class="right__password-requirements-title">Password must:</h3>
 
@@ -123,7 +135,9 @@
             </li>
           </ul>
         </div>
+        <!------------------- PASSWORD REQUIREMENTS STARTS --------------------->
 
+        <!------------------- SHOW MORE INFO STARTS --------------------->
         <div>
           <div class="password__more-info-text-wrapper">
             <div class="password__more-info-line"></div>
@@ -135,8 +149,12 @@
 
           <div class="password__more-info-container"></div>
         </div>
+        <!------------------- SHOW MORE INFO ENDS --------------------->
       </div>
+      <!------------------- RIGHT SECTION END --------------------->
     </main>
+
+    <!------------------- FOOTER STARTS --------------------->
     <footer class="footer">
       <b title="23 December 2023">&copy; Nazmul Hossain - 2023</b> •
       <a
@@ -160,8 +178,9 @@
         >Source Code</a
       >
     </footer>
+    <!------------------- FOOTER ENDS --------------------->
 
-    <!-- JavaScript -->
+    <!------------------- LINK JAVASCRIPT --------------------->
     <script src="./assets/js/script.js" type="module"></script>
   </body>
 </html>
