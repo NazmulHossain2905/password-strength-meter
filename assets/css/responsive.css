@@ -1,0 +1,43 @@
+@media screen and (max-width: 700px) {
+  .main__right {
+    padding-right: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .main__left {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .main__right {
+    padding: 1rem;
+  }
+
+  .right__password-hide-show-wrapper {
+    font-size: 1.1rem;
+  }
+
+  .right__password-input {
+    margin-top: 0.5rem;
+    padding: 0.6rem 0.8rem;
+  }
+
+  .password__more-info-text {
+    padding: 0.3rem 0.5rem;
+  }
+
+  .right__password-requirements-container {
+    font-size: 1.1rem;
+    margin-top: 0;
+  }
+
+  .password__strength-steps-wrapper {
+    gap: 0.2rem;
+  }
+
+  .footer {
+    font-size: small;
+  }
+}

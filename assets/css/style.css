@@ -30,7 +30,7 @@ body {
 }
 
 .heading {
-  font-size: 2.2rem;
+  font-size: clamp(1.2rem, 0.486rem + 1.905vw, 2.2rem);
   color: var(--success-color);
   margin-left: 3rem;
   margin-block: 1rem 0;
@@ -58,7 +58,7 @@ body {
 }
 
 .left__image {
-  width: 28rem;
+  max-width: clamp(14rem, 0.757rem + 30.27vw, 28rem);
   animation: anim 5s cubic-bezier(0.39, 0.575, 0.565, 1) infinite alternate;
 }
 
@@ -162,7 +162,6 @@ body {
 .password__requirement {
   position: relative;
   display: flex;
-  align-items: center;
   padding-left: 1.3rem;
   font-weight: 500;
 }
@@ -176,6 +175,7 @@ body {
   aspect-ratio: 1;
   background-color: #888;
   border-radius: 50%;
+  margin-top: 0.4rem;
 }
 
 .correct.password__requirement--one::before {
