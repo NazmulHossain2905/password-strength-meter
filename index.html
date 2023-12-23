@@ -19,14 +19,16 @@
     <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
   <body>
-    <h1 class="heading">Password Strength Meter</h1>
     <main class="main">
       <div class="main__left">
-        <img
-          class="left__image"
-          src="./assets/images/security.png"
-          alt="Security"
-        />
+        <h1 class="heading">Password Strength Meter</h1>
+        <div class="left__image-wrapper">
+          <img
+            class="left__image"
+            src="./assets/images/security.png"
+            alt="Security"
+          />
+        </div>
       </div>
       <div class="main__right">
         <div class="right__password-wrapper">
@@ -84,12 +86,10 @@
           ></div>
         </div>
 
-        <div class="password__hint-wrapper">
-          😟 Week, Must contain at least 8 characters
-        </div>
+        <div class="password__hint-wrapper"></div>
 
         <div class="right__password-requirements-container">
-          <p class="right__password-requirements-title">Password must:</p>
+          <h3 class="right__password-requirements-title">Password must:</h3>
 
           <p class="password__requirement password__requirement--one">
             Be between 8 and 64 characters
@@ -121,6 +121,37 @@
               An special character
             </li>
           </ul>
+        </div>
+
+        <div class="password__more-info-text-wrapper">
+          <div class="password__more-info-line"></div>
+          <a class="password__more-info-text" href="javascript:vaid(0)"
+            >Show More Info</a
+          >
+          <div class="password__more-info-line"></div>
+        </div>
+
+        <div class="password__more-info-container">
+          <div class="password__more-info-wrapper">
+            <h3 class="password__more-info-title">Upper-case</h3>
+            <div class="password__more-info-details-container">
+              <div>
+                <div class="password__more-info-details-title">Characters</div>
+                <div class="password__more-info-details">
+                  N, Z, U, L, N, Z, U, L
+                </div>
+              </div>
+              <div class="password__more-info-details-line"></div>
+              <div>
+                <div class="password__more-info-details-title">Total</div>
+                <div
+                  class="password__more-info-details password__more-info-details--total"
+                >
+                  4
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </main>

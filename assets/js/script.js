@@ -46,8 +46,8 @@ hideAndShowPassword.addEventListener("click", function () {
 input.addEventListener("input", function (e) {
   const inputValue = this.value.trim();
 
-  if (!inputValue) {
-    hideAndShowPassword.style.display = "none";
+  if (inputValue) {
+    hideAndShowPassword.style.display = "block";
   } else hideAndShowPassword.style.display = "";
 
   const upperCase = handleUpperCase(inputValue);
@@ -219,7 +219,7 @@ const handlePasswordStrengthStep = (
     setColor(1);
   }
 
-  if (inputValue.length >= 8 && upperCase.length && lowerCase.length) {
+  if (inputValue.length >= 8 && (upperCase.length || lowerCase.length)) {
     setColor(2, colors.warning);
   } else {
     setColor(2);
@@ -227,8 +227,7 @@ const handlePasswordStrengthStep = (
 
   if (
     inputValue.length >= 8 &&
-    upperCase.length &&
-    lowerCase.length &&
+    (upperCase.length || lowerCase.length) &&
     number.length
   ) {
     setColor(3, colors.info);
@@ -247,28 +246,4 @@ const handlePasswordStrengthStep = (
   } else {
     setColor(4);
   }
-
-  // if (inputValue.length >= 3) {
-  //   setColor(1, colors.error);
-  // } else {
-  //   setColor(1);
-  // }
-
-  // if (upperCase.length && lowerCase.length) {
-  //   setColor(2, colors.warning);
-  // } else {
-  //   setColor(2);
-  // }
-
-  // if (number.length) {
-  //   setColor(3, colors.info);
-  // } else {
-  //   setColor(3);
-  // }
-
-  // if (symbol.length) {
-  //   setColor(4, colors.success);
-  // } else {
-  //   setColor(4);
-  // }
 };

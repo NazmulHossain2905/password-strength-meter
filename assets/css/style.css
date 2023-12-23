@@ -30,7 +30,7 @@ body {
 }
 
 .heading {
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   color: var(--success-color);
   margin-left: 3rem;
   margin-block: 1rem 0;
@@ -41,18 +41,24 @@ body {
 .main {
   display: flex;
   height: 100%;
+  overflow: hidden;
 }
 
 .main__left {
   flex: 1 1 50%;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+}
+
+.left__image-wrapper {
+  height: 100%;
+  display: flex;
   justify-content: center;
-  /* display: none; */
+  align-items: center;
 }
 
 .left__image {
-  width: 30rem;
+  width: 28rem;
   animation: anim 5s cubic-bezier(0.39, 0.575, 0.565, 1) infinite alternate;
 }
 
@@ -72,6 +78,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  overflow-y: auto;
 }
 
 .right__password-wrapper {
@@ -87,7 +94,7 @@ body {
 .right__password-label {
   font-size: 1.2rem;
   font-weight: 700;
-  color: var(--dark-color);
+  color: dodgerblue;
 }
 
 .right__password-hide-show-wrapper {
@@ -95,6 +102,11 @@ body {
   color: #515151;
   cursor: pointer;
   user-select: none;
+  display: none;
+  transition: 0.2s ease;
+}
+.right__password-hide-show-wrapper:hover {
+  color: var(--info-color);
 }
 
 .right__password-input {
@@ -142,6 +154,8 @@ body {
 
 .right__password-requirements-title {
   font-weight: 600;
+  font-size: 1.3rem;
+  color: var(--error-color);
 }
 
 .password__requirement {
@@ -176,6 +190,79 @@ body {
   display: flex;
   flex-direction: column;
   gap: 0.3rem;
+}
+
+/* Password More Info Styles */
+.password__more-info-text-wrapper {
+  text-align: center;
+  color: var(--hint-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.password__more-info-text {
+  color: var(--hint-color);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  background-color: #fff;
+  transition: 0.2s ease;
+}
+
+.password__more-info-text:hover {
+  color: var(--info-color);
+  text-decoration: underline;
+}
+
+.password__more-info-line {
+  height: 3px;
+  flex: 1;
+  background-color: var(--white-shade);
+  border-radius: 5px;
+}
+
+.password__more-info-container {
+  /* height: 0;
+  overflow: hidden; */
+}
+
+.password__more-info-wrapper {
+  /* max-width: fit-content; */
+  margin-bottom: 1rem;
+}
+
+.password__more-info-title {
+  border-bottom: 1px solid var(--white-shade);
+  padding-bottom: 0.2rem;
+  color: var(--info-color);
+}
+
+.password__more-info-details-container {
+  margin-top: 0.3rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.password__more-info-details-title {
+  font-weight: 600;
+  color: var(--hint-color);
+  /* padding-bottom: 0.2rem; */
+}
+
+.password__more-info-details {
+  color: var(--dark-color);
+  font-weight: 500;
+}
+
+.password__more-info-details-line {
+  background-color: var(--white-shade);
+  width: 1px;
+  height: 1.5rem;
+}
+
+.password__more-info-details--total {
+  text-align: center;
 }
 
 /* Font Colors */
@@ -277,4 +364,18 @@ body {
 
 .right__password-space-remove-button:hover {
   color: var(--info-color);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  background-color: var(--white-shade);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--hint-color);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--info-color);
 }
