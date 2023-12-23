@@ -41,6 +41,10 @@ const passwordStrengthStepEl = (stepNo = 1) => {
 };
 
 const passwordHint = document.querySelector(".password__hint-wrapper");
+const passwordMoreInfoContainer = document.querySelector(
+  ".password__more-info-container"
+);
+const showMoreInfoButton = document.querySelector(".password__more-info-text");
 
 export {
   hideAndShowPassword,
@@ -57,4 +61,6 @@ export {
   passwordModalCloseButton,
   passwordStrengthStepEl,
   passwordHint,
+  passwordMoreInfoContainer,
+  showMoreInfoButton,
 };

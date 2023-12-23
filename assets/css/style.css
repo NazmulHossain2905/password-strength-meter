@@ -23,7 +23,7 @@
 body {
   background-color: #fff;
   font-family: var(--font-family);
-  border-top: 7px solid var(--success-color);
+  /* border-top: 7px solid var(--success-color); */
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -83,6 +83,7 @@ body {
 
 .right__password-wrapper {
   position: relative;
+  margin-top: 0.2rem;
 }
 
 .right__password-label-wrapper {
@@ -222,8 +223,19 @@ body {
 }
 
 .password__more-info-container {
-  /* height: 0;
-  overflow: hidden; */
+  display: none;
+  animation: fadeUp 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0.5;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .password__more-info-wrapper {
@@ -263,6 +275,22 @@ body {
 
 .password__more-info-details--total {
   text-align: center;
+}
+
+.footer {
+  color: var(--dark-color);
+  text-align: center;
+  padding-block: 0.2rem 0.4rem;
+  font-size: 0.9rem;
+}
+
+.footer__link {
+  transition: color 0.2s ease-in;
+  color: var(--hint-color);
+}
+
+.footer__link:hover {
+  color: var(--info-color);
 }
 
 /* Font Colors */

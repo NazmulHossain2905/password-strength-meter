@@ -5,11 +5,13 @@ import {
   numberEl,
   passwordHint,
   passwordModalCloseButton,
+  passwordMoreInfoContainer,
   passwordRequirementOne,
   passwordRequirementTwo,
   passwordSpaceRemoveButton,
   passwordSpaceSpaceModal,
   passwordStrengthStepEl,
+  showMoreInfoButton,
   symbolEl,
   upperCaseEl,
 } from "./elements.js";
@@ -60,18 +62,7 @@ input.addEventListener("input", function (e) {
   handlePasswordLength(inputValue);
   handlePasswordHint(inputValue, upperCase, lowerCase, number, symbol);
   handlePasswordStrengthStep(inputValue, upperCase, lowerCase, number, symbol);
-
-  // const upperCase = checkUpperCase(inputValue);
-  // const lowerCase = checkLowerCase(inputValue);
-  // const number = checkNumber(inputValue);
-  // const symbol = checkSymbol(inputValue);
-  // const whiteSpace = checkWhiteSpace(inputValue);
-
-  // console.log(lowerCase);
-  // console.log(number);
-  // console.log(symbol);
-  // console.log(whiteSpace);
-  // console.log(passRequirements);
+  handleShowMoreInfo(upperCase, lowerCase, number, symbol, space);
 });
 
 const handleUpperCase = (inputValue) => {
@@ -247,3 +238,76 @@ const handlePasswordStrengthStep = (
     setColor(4);
   }
 };
+
+const handleShowMoreInfo = (upperCase, lowerCase, number, symbol, space) => {
+  const moreInfoArrOfObj = [
+    {
+      title: "Upper-case",
+      item: upperCase,
+      total: upperCase.length,
+    },
+    {
+      title: "Lower-case",
+      item: lowerCase,
+      total: lowerCase.length,
+    },
+    {
+      title: "Numbers",
+      item: number,
+      total: number.length,
+    },
+    {
+      title: "Symbols",
+      item: symbol,
+      total: symbol.length,
+    },
+    // {
+    //   title: "Spaces",
+    //   item: space,
+    //   total: space.length,
+    // },
+  ];
+
+  const filterValidMoreInfo = moreInfoArrOfObj.filter(({ total }) => total);
+
+  const createMoreInfoMarkup = filterValidMoreInfo.map(
+    ({ title, item, total }) => {
+      const markup = `
+    <div class="password__more-info-wrapper">
+      <h3 class="password__more-info-title">${title}</h3>
+      <div class="password__more-info-details-container">
+        <div>
+          <div class="password__more-info-details-title">Characters</div>
+          <div class="password__more-info-details">
+            ${item.join(", ")}
+          </div>
+        </div>
+        <div class="password__more-info-details-line"></div>
+        <div>
+          <div class="password__more-info-details-title">Total</div>
+          <div
+            class="password__more-info-details password__more-info-details--total"
+          >
+            ${total}
+          </div>
+        </div>
+      </div>
+    </div>
+    `;
+
+      return markup;
+    }
+  );
+
+  passwordMoreInfoContainer.innerHTML = createMoreInfoMarkup.join(" ");
+};
+
+showMoreInfoButton.addEventListener("click", function (e) {
+  if (passwordMoreInfoContainer.style.display === "block") {
+    passwordMoreInfoContainer.style.display = "none";
+    this.innerText = "Show More Info";
+  } else {
+    passwordMoreInfoContainer.style.display = "block";
+    this.innerText = "Hide More Info";
+  }
+});
