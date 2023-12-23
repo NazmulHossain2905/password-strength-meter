@@ -1,6 +1,16 @@
+@media screen and (max-width: 900px) {
+  .right__password-space-alert-modal {
+    left: 22%;
+  }
+}
+
 @media screen and (max-width: 700px) {
   .main__right {
     padding-right: 1.5rem;
+  }
+
+  .right__password-space-alert-modal {
+    left: 30%;
   }
 }
 
@@ -22,6 +32,10 @@
   .right__password-input {
     margin-top: 0.5rem;
     padding: 0.6rem 0.8rem;
+  }
+
+  .right__password-space-alert-modal {
+    left: 22%;
   }
 
   .password__more-info-text {
